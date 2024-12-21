@@ -1,0 +1,32 @@
+# This file instructs web crawlers how to interact with your website.
+
+# Allow all search engines to crawl the entire site
+User-agent: *
+Disallow: 
+
+# Disallow specific directories to prevent crawling of sensitive information
+Disallow: /private/       # Prevent crawling of private files or folders
+Disallow: /tmp/          # Prevent crawling of temporary files or folders
+Disallow: /admin/        # Prevent crawling of admin panel or sensitive backend
+
+# Allow specific pages if necessary
+Allow: /public/          # Allow crawling of public content even if it's within disallowed directories
+
+# Disallow specific file types from being indexed
+Disallow: /*.pdf$        # Prevent indexing of PDF files
+Disallow: /*.doc$        # Prevent indexing of Word documents
+
+# Sitemap location for better indexing
+Sitemap: https://criticalkarepharma.com/sitemap.xml  # URL to your sitemap
+
+# Block specific bots if needed
+User-agent: BadBot      # Replace 'BadBot' with the actual user-agent name of the bot you want to block
+Disallow: /             # Disallow this bot from crawling any part of the site
+
+# Crawl delay for certain bots (optional)
+User-agent: Googlebot   # Specifically for Googlebot
+Crawl-delay: 10         # Suggest that Googlebot waits 10 seconds between requests
+
+# Additional bot directives (if necessary)
+User-agent: *           # This applies to all bots
+Disallow: /temporary/   # Prevent crawling of temporary files
